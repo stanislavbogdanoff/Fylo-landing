@@ -59,6 +59,7 @@ p {
 
 /************* Utility Classes end **************/
 
+
 /******************************************* Header Section Starts **************************************************/
 
 /************** Nav start *****************/
@@ -93,7 +94,7 @@ p {
   border: none;
 }
 
-/******************************************* Header Section Starts **************************************************/
+/******************************************* Header Section Ends *****************************************************/
 
 
 
@@ -133,7 +134,7 @@ p {
 
 /****************** Hero end ******************/
 
-/****************** Features Start ******************/
+/****************** Features start ******************/
 
 .features-box {
   width: 100%;
@@ -164,9 +165,9 @@ p {
   line-height: 1.5rem;
 }
 
-/****************** Features End ******************/
+/****************** Features end ******************/
 
-/****************** CTA Start ******************/
+/****************** CTA start ******************/
 
 .cta-box {
   width: 100%;
@@ -213,9 +214,9 @@ p {
   border-color: white;
 }
 
-/****************** CTA End ******************/
+/****************** CTA end ******************/
 
-/************** Testimonials Start *************/
+/************** Testimonials start *************/
 
 .testimonials-box {
   width: 100%;
@@ -264,9 +265,9 @@ p {
   z-index: -1;
 }
 
-/************** Testimonials End *************/
+/************** Testimonials end *************/
 
-/************** Sign-up Start *************/
+/************** Sign-up start *************/
 
 .signup-box {
   width: 100%;
@@ -301,7 +302,7 @@ p {
   border-radius: 60px;
   padding: 1rem 3rem;
   border: none;
-  color: var(--lightgrey)
+  color: var(--main)
 }
 .signup-btn {
   width: fit-content;
@@ -310,6 +311,9 @@ p {
   cursor: pointer;
   margin-left: 3%;
 }
+
+/************** Sign-up end *************/
+
 
 /********************************************** Main Section Ends ****************************************************/
 
@@ -325,31 +329,55 @@ footer {
 .footer-content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .footer-logo {
   width: 10rem;
   margin-bottom: 3rem;
 }
-
 .footer-row-text {
   margin-left: 1rem;
+  margin-top: -5px;
+}
+.footer-media {
+  display: inline-block;
+  text-align: center;
 }
 .footer-media-icon {
   width: 20px;
+}
+.footer-media-link {
   margin-left: 2rem;
 }
 .footer-media-link path:hover {
   fill: var(--cyan);
 }
-.footer-row--info {
+.footer-col {
+  flex: 0 0 25%;
+}
+.footer-col--1 {
+  flex: 0 0 30%;
+  padding-right: 3rem;
+}
+.footer-col--2 {
+  flex: 0 0 20%;
+}
+.footer-row {
   display: flex;
+  align-items: flex-start;
+}
+#footer-row--2 {
+  margin-bottom: 1rem;
 }
 .footer-nav {
   display: flex;
+  justify-content: center;
 }
 .footer-nav-ul {
   list-style: none;
-  margin-right: 5rem;
+}
+#footer-nav-ul--2 {
+  margin-left: 3rem;
 }
 .footer-nav-ul li {
   margin-bottom: 1rem;
@@ -361,42 +389,33 @@ footer {
 .footer-nav-link:hover {
   color: white;
 }
-.footer-col--info {
-  display: flex;
-  width: 50%;
-}
 .footer-location {
   width: 100%;
 }
-.footer-row-left {
-  width: 40%;
-  display: flex;
-  align-items: flex-start;
-  margin-right: 5rem;
+
+/************** Attribution start *************/
+
+.attribution {
+  background-color: hsl(216, 71%, 5%);
+  color: var(--lightgrey);
+  text-align: center;
+  font-size: 0.7rem;
 }
-.footer-row-right {
-  display: flex;
-  width: 100%;
-  align-items:flex-start;
-  margin-bottom: 1rem;
+.attribution a {
+  text-decoration: none;
+  color: var(--cyan)
+}
+.attribution a:hover {
+  text-decoration: underline;
 }
 
+/************** Attribution end ***************/
+
+/************************************************* Footer Ends *******************************************************/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************* Media Query *************************************************************/
+/************************************************** Media Query ******************************************************/
 
 @media screen and (max-width: 1270px) {
   .testimonials-box {
@@ -433,21 +452,8 @@ footer {
   .hero-content {
     width: 60%;
   }
-  .footer-content {
-    flex-direction: column;
-  }
-  .footer-col--info {
-    width: 100%;
-  }
-  .footer-nav {
-    width: 100%;
-    margin-top: 3rem;
-    padding-left: 2rem;
-  }
-  .footer-col--media {
-    width: 100%;
-    margin-top: 3rem;
-    justify-content: center;
+  .footer-col--1 {
+    padding-right: 3rem;
   }
 }
 @media screen and (max-width: 1050px) {
@@ -471,6 +477,21 @@ footer {
   .cta-heading {
     margin-top: 3rem;
     text-align: center;
+  }
+  .footer-col--1, .footer-col--2, .footer-nav, .footer-media {
+    flex: 0 0 50%;
+  }
+  .footer-nav, .footer-media {
+    text-align: left;
+    justify-content: left;
+    margin-top: 3rem;
+  }
+  .footer-nav {
+    padding-left: 1.8rem;
+  }
+  .footer-media-link {
+    margin: 0;
+    margin-right: 2rem;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -513,6 +534,9 @@ footer {
   .testimonials-col {
     margin-top: 2rem;
   }
+  .footer-col--1 {
+    padding-right: 2.5rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -552,19 +576,24 @@ footer {
   .cta-heading {
     margin: 2vh 0 1vh;
   }
-  .footer-col--info {
-    flex-direction: column;
+  .footer-col--2, .footer-col--1, .footer-nav, .footer-media {
+    flex: 0 0 100%;
+  }
+  .footer-col--1 {
+    padding-right: 0;
+  }
+  .footer-col--2 {
+    margin-top: 2rem;
   }
   .footer-nav {
-    flex-direction: column;
-    padding-top: 0;
+    padding-left: 0;
   }
-  .footer-row-left {
-    width: 100%;
-    margin-bottom: 1rem;
+  .footer-media {
+    text-align: center;
+    justify-content: center;
   }
-  .footer-nav-ul--2 {
-    margin-top: 2rem;
+  #footer-media-link-last {
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 630px) {
@@ -681,7 +710,6 @@ footer {
   .signup-input {
     font-size: 0.7rem;
   }
-  .footer-logo {
-    width: 9rem;
-  }
 }
+
+/****************************************************** END **********************************************************/
